@@ -18,12 +18,11 @@
     <h1 class="blog-title">{{@blog.title}}</h1>
     <h2 class="blog-description">{{@blog.description}}</h2>
     <div class="custom-links">
-        <a href="https://twitter.com/MarkReadM" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
-        <a href="https://plus.google.com/113570202169808481097/posts" target="_blank"><i class="fa fa-google-plus"></i></a>&nbsp;&nbsp;
-        <a href="https://www.pinterest.com/markreadM/" target="_blank"><i class="fa fa-pinterest"></i></a>&nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="/aboutme/">Über mich</a>&nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="/veroffentlichungen/">Veröffentlichungen</a>&nbsp;&nbsp;·&nbsp;&nbsp;
-        <a href="/alles-ausser-sprachkritik/">Sprachkritik</a>
+        <a href="https://twitter.com/corani" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+        <a href="https://plus.google.com/u/0/+DanielBos/posts" target="_blank"><i class="fa fa-google-plus"></i></a>&nbsp;&nbsp;
+        <a href="https://github.com/corani/" target="_blank"><i class="fa fa-github"></i></a>&nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="/author/daniel-bos/">About</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="http://blog.loadingdata.nl/daniel-bos/">Dani&euml;l Bos</a>
     </div>
 </header>
 
@@ -63,10 +62,15 @@
                         <header class="post-header">
                             <h2 class="post-title" itemprop="name"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
                         </header>
+                        <div class="post-meta">
+                        <div class="author-image" style="background-image: url({{author.image}}); display: inline-block; width: 30px; height: 30px; float:left;text-indent:-9999px;background-size:cover">Blog Logo</div>
+                        <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person" style="display:inline">{{author}}</h4>
+                         on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+                        </div>
                         <section class="post-excerpt" itemprop="description">
-                            <p>{{excerpt characters="130"}}&hellip;</p>
+                            <p>{{excerpt characters="300"}}&hellip;</p>
                         </section>
-                        <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> <span class="post-tags-set">on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span></div>
+                        <div class="post-meta"><span class="post-tags-set">{{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}</span></div>
                     </div>
                 </article>
             {{/if}}
@@ -82,13 +86,18 @@
         {{else}}
             <article class="{{post_class}}" itemscope itemtype="http://schema.org/BlogPosting" role="article">
                 <div class="article-item">
-                    <header class="post-header">
-                        <h2 class="post-title" itemprop="name"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
-                    </header>
-                    <section class="post-excerpt" itemprop="description">
-                        <p>{{excerpt characters="130"}}&hellip;</p>
-                    </section>
-                    <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> <span class="post-tags-set">on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span></div>
+	                <header class="post-header">
+                            <h2 class="post-title" itemprop="name"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
+                        </header>
+                        <div class="post-meta">
+                        <div class="author-image" style="background-image: url({{author.image}}); display: inline-block; width: 30px; height: 30px; float:left;text-indent:-9999px;background-size:cover">Blog Logo</div>
+                        <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person" style="display:inline">{{author}}</h4> 
+                         on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+                        </div>
+                        <section class="post-excerpt" itemprop="description">
+                            <p>{{excerpt characters="300"}}&hellip;</p>
+                        </section>
+                        <div class="post-meta"><span class="post-tags-set">{{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}</span></div>
                 </div>
             </article>
         {{/if}}

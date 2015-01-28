@@ -10,8 +10,6 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-        {{#has tag="articleImage"}}
-
         <div class="article-image">
             <div class="post-image-image">
 
@@ -21,9 +19,10 @@
             <div class="post-meta">
                 <h1 class="post-title">{{{title}}}</h1>
                 <div class="cf post-meta-text">
+                    {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}<br />
                     <div class="author-image" style="background-image: url({{author.image}})">Blog Logo</div>
                     <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{author}}</h4> on
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>, tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
                 </div>
                 <center><a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a></center>
             </div>
@@ -36,13 +35,7 @@
                 $(document).ready(function(){
 
                     $('.post-content').each(function() {
-                        var $this = $(this),
-                            img = $this.find('img:first'),
-                            url = img.attr('src');
-
-                        $(".post-image-image").css('background-image', 'url('+url+')');
-
-                        img.remove();
+                        $(".post-image-image").css('background-image', 'url({{ image }})');
                     });
 
                     var $window = $(window),
@@ -81,25 +74,6 @@
         </script>
 
         {{! Each post has the blog logo at the top, with a link back to the home page }}
-
-        {{else}}
-
-        <div class="noarticleimage">
-            <div class="post-meta">
-                <h1 class="post-title">{{{title}}}</h1>
-                <div class="cf post-meta-text">
-                    <div class="author-image" style="background-image: url({{author.image}})">Blog Logo</div>
-                    <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{author}}</h4> on
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>, tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
-
-        {{/has}}
-
 
             <section class="post-content">
                 <div class="post-reading">

@@ -5,7 +5,7 @@
 
 .hljs {
     display: block; padding: 0.5em;
-    background: #282B2E;
+/*    background: #282B2E;*/
 }
 
 .hljs-keyword,
@@ -50,7 +50,7 @@
 .hljs-code,
 .hljs-class .hljs-title,
 .hljs-header {
-    color: white;
+/*    color: white;*/
 }
 
 .hljs-class,

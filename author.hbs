@@ -41,9 +41,9 @@
     <h1 class="blog-title">{{name}}</h1>
     <h2 class="blog-description">{{bio}}</h2>
     <div class="custom-links">
-        <a href="https://twitter.com/MarkReadM" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
-        <a href="https://plus.google.com/113570202169808481097/posts" target="_blank"><i class="fa fa-google-plus"></i></a>&nbsp;&nbsp;
-        <a href="https://www.pinterest.com/markreadM/" target="_blank"><i class="fa fa-pinterest"></i></a>
+        <a href="https://twitter.com/corani" target="_blank"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;
+        <a href="https://plus.google.com/u/0/+DanielBos/posts" target="_blank"><i class="fa fa-google-plus"></i></a>&nbsp;&nbsp;
+        <a href="https://github.com/corani" target="_blank"><i class="fa fa-github"></i></a>
     </div>
 </header>
 
@@ -60,7 +60,9 @@
     <article class="{{post_class}}">
         <header class="post-header">
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
+            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+            <span class="post-tags-set">{{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}</span>
+            </span>
         </header>
         <section class="post-excerpt">
             <p>{{excerpt}}&hellip;</p>
