@@ -163,7 +163,6 @@ body {
     .content article:last-child {
       border-bottom: 0px; }
     .content article .post-title {
-      text-align: center;
       letter-spacing: -0.02em;
       font-weight: 700;
       font-style: normal;
@@ -676,3 +675,5 @@ body {
     text-indent: -9999px; }
   .post .post-sidebar .author-name {
     display: inline; }
+.post-meta .post-title {
+    text-align: center; }

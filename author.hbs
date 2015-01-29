@@ -60,13 +60,17 @@
     <article class="{{post_class}}">
         <header class="post-header">
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
-            <span class="post-tags-set">{{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}</span>
-            </span>
+            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
         </header>
         <section class="post-excerpt">
             <p>{{excerpt}}&hellip;</p>
         </section>
+        <header class="post-header">
+            <span class="post-meta">
+            <span class="post-tags-set"><i class="fa fa-tags"></i>&nbsp;{{#foreach tags}}{{#if @first}}{{else}}, {{/if}}<span class="post-tag-{{slug}}"><a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span>
+            </span>
+        </header>
+
     </article>
 
     {{/foreach}}

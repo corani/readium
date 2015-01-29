@@ -70,7 +70,7 @@
                         <section class="post-excerpt" itemprop="description">
                             <p>{{excerpt characters="300"}}&hellip;</p>
                         </section>
-                        <div class="post-meta"><span class="post-tags-set">{{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}</span></div>
+                        <div class="post-meta"><span class="post-tags-set"><i class="fa fa-tags"></i>&nbsp;{{#foreach tags}}{{#if @first}}{{else}}, {{/if}}<span class="post-tag-{{slug}}"><a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span></div>
                     </div>
                 </article>
             {{/if}}
@@ -97,7 +97,7 @@
                         <section class="post-excerpt" itemprop="description">
                             <p>{{excerpt characters="300"}}&hellip;</p>
                         </section>
-                        <div class="post-meta"><span class="post-tags-set">{{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}</span></div>
+                        <div class="post-meta"><span class="post-tags-set"><i class="fa fa-tags"></i>&nbsp;{{#foreach tags}}{{#if @first}}{{else}}, {{/if}}<span class="post-tag-{{slug}}"><a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}</span></div>
                 </div>
             </article>
         {{/if}}
