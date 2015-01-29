@@ -163,6 +163,7 @@ body {
     .content article:last-child {
       border-bottom: 0px; }
     .content article .post-title {
+      text-align: center;
       letter-spacing: -0.02em;
       font-weight: 700;
       font-style: normal;
@@ -655,3 +656,23 @@ body {
   margin-top: 50px; }
 .post-tag-articleimage {
   display: none; }
+.post-sidebar {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 250px;
+}
+.post .post-sidebar .author-image {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 8px;
+    margin-bottom: -10px;
+    float: left;
+    background-size: cover;
+    border-radius: 100%;
+    text-indent: -9999px; }
+  .post .post-sidebar .author-name {
+    display: inline; }
