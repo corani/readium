@@ -82,7 +82,7 @@
                     <div class="author-image" style="background-image: url({{author.image}})">Blog Logo</div>
                     <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{author}}</h4> on
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time><br/>
-		    {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}} {{/if}}<a href="/tag/{{slug}}"><i class="fa fa-tag"></i>&nbsp;{{name}}</a></span>{{/foreach}}
+		    <i class="fa fa-tags"></i>&nbsp;{{#foreach tags}}{{#if @first}}{{else}}, {{/if}}<span class="post-tag-{{slug}}"><a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}}
                 </div>
             </div>
             </section>
@@ -144,7 +144,7 @@
 <script>
 function moveSidebar() {
    var topofpage = $('[name="topofpage"]').position();
-    $('.post-sidebar').offset({ top: topofpage.top, left: topofpage.left - 260 });
+    $('.post-sidebar').offset({ top: topofpage.top, left: topofpage.left - 280 });
 }
 $(window).load(moveSidebar);
 $(window).resize(moveSidebar);
