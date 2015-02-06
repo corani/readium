@@ -373,6 +373,7 @@ body {
 .post .post-content {
   width: 100%;
   font-family: Linux Libertine;
+  text-align: justify;
   color: #333333; }
   .post .post-content h1, .post .post-content h2, .post .post-content h3 {
     font-family: Open Sans, MundoSans, "Helvetica Neue", Arial, Helvetica, sans-serif; }
@@ -677,3 +678,13 @@ body {
     display: inline; }
 .post-meta .post-title {
     text-align: center; }
+.post .post-content .amazon {
+    float: right;
+    margin: 1em;}
+.post .post-content .reading-time {
+    background-color: white;
+    color: black;
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 1em;
+    font-size: larger;}
